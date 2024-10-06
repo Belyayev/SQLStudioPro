@@ -1,0 +1,64 @@
+Here's summary of my code.
+app.py
+Imports: Imports necessary modules including sys, logging, sqlite3, and PySide6 components.
+Class SQLManagementStudioPro:
+Initialization: Sets up the main window, UI components, and status bar. Initializes the engine and checks/creates the SQLite database and table.
+Methods:
+check_and_create_database: Checks if the SQLite database and table exist, and creates them if not.
+load_query: Loads a query from the SQLite database based on the selected table.
+save_query: Saves the current query to the SQLite database.
+initial_connect: Connects to the initial database and populates the database list.
+switch_database: Switches to a different database.
+execute_sql: Executes the SQL query entered by the user.
+filter_tables: Filters the tables based on user input.
+capitalize_sql_commands: Capitalizes SQL commands in the input field.
+Main Execution: Sets up the application and shows the main window.
+ui_setup.py
+Class UIComponents: Holds references to various UI components.
+Function setup_ui: Sets up the UI components including input fields, buttons, list widgets, and the SQL input/output areas.
+database_operations.py
+Functions:
+connect_to_database: Connects to the specified database using pyodbc.
+populate_database_list: Populates the list of databases.
+switch_database: Switches to a different database and populates the list of tables.
+populate_tables_list: Populates the list of tables and connects the item click event to load the query.
+sql_execution.py
+Function execute_sql: Executes the SQL query and displays the results in the output table.
+sql_formatter.py
+Class SQLFormatter: A syntax highlighter for SQL keywords.
+Methods:
+highlightBlock: Highlights SQL keywords in the text.
+capitalize_sql_commands: Capitalizes SQL commands in the text.
+
+
+TODO:
+- Ctrl + Click on table name or field name to populate that value into SQL query input field
+- Or use drag and drop option 
+- Highlight table names in SQL query editor
+- Save query automatically when navigated away
+- Sort table output by clicking on the column (both ways)
+- copy table contents or export to Excel 
+- Load data in batches with offset and add button to lead more
+- add tab to show views in the database 
+- button x to delete database from the list
+- cache query output in memory and switch between the views
+- shortcuts to execute the query from the keyboard
+- add loaders when app is busy
+- disable buttons when input fields are empty
+- if database dropdown not empty set first item from the list as active
+- favorite tables and filter by fav button
+- flag tables that have output data in memory
+- zoom in and out both query input and table output
+
+
+- quick commands 
+    - select *
+    - select distinct
+    - rank by certain fields
+    - select top (100)
+    - script table
+    - drop table (red + confirmation)
+    - truncate table (red)
+    - clone table
+    - update with nice form
+
